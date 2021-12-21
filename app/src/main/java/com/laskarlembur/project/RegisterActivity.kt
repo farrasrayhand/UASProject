@@ -41,8 +41,8 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (password.isEmpty() || password.length < 8) {
-                contextpass.error = "Password Kurang dari 8 Karakter!"
+            if (password.isEmpty() || password.length < 6) {
+                contextpass.error = "Password Kurang dari 6 Karakter!"
                 contextpass.requestFocus()
                 return@setOnClickListener
             }
