@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "12915025527",
+    "firebase_url": "https://umproject-533c1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "umproject-533c1",
+    "storage_bucket": "umproject-533c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12915025527:android:a0ac3297b0f026c3f98872",
+        "android_client_info": {
+          "package_name": "com.laskarlembur.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12915025527-kvq12r4pvvrtbb2aiun1c4ipbob87607.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo8VXKRmtiPhFgWF_r0q6z8YDQzgNK3Tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12915025527-kvq12r4pvvrtbb2aiun1c4ipbob87607.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
