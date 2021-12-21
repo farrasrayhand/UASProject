@@ -52,6 +52,7 @@ class RegisterActivity : AppCompatActivity() {
         loginbutton = findViewById(R.id.btnLogin)
         loginbutton.setOnClickListener {
             Intent(this@RegisterActivity, LoginActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
         }
