@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UAS Project.UAS_Project.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UAS Project.UAS_Project.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UAS_Project.iml" filepath="$PROJECT_DIR$/.idea/modules/UAS_Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UAS_Project.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UAS_Project.app.iml" />
     </modules>
   </component>
 </project>
