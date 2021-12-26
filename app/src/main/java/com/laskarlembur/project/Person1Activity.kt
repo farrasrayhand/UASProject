@@ -50,8 +50,18 @@ class Person1Activity : AppCompatActivity() {
         // Handle action bar item clicks here.
         val id = item.getItemId()
 
-        if (id == R.id.menu_tentang) {
+        if (id == R.id.menu_home) {
+            Intent(this@Person1Activity, HomeActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+            return true
+        }
 
+        if (id == R.id.menu_tentang) {
+            Intent(this@Person1Activity, AboutActivity::class.java).also {
+                startActivity(it)
+            }
             return true
         }
         if (id == R.id.menu_logout) {

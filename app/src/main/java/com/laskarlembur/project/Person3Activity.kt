@@ -1,50 +1,36 @@
 package com.laskarlembur.project
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 
-class HomeActivity : AppCompatActivity() {
-
+class Person3Activity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var logoutbutton : Button
     private lateinit var toolbar: Toolbar
     private lateinit var nav_bottom : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_person3)
 
-        var actionBar = getSupportActionBar()
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-        }
-
-        val person1 = findViewById(R.id.person1) as ShapeableImageView
-        person1.setOnClickListener {
-            Intent(this@HomeActivity, Person1Activity::class.java).also {
-                startActivity(it)
-            }
-        }
-
-        val person2 = findViewById(R.id.person2) as ShapeableImageView
-        person2.setOnClickListener {
-            Intent(this@HomeActivity, Person2Activity::class.java).also {
-                startActivity(it)
-            }
-        }
-
-        val person3 = findViewById(R.id.person3) as ShapeableImageView
-        person3.setOnClickListener {
-            Intent(this@HomeActivity, Person3Activity::class.java).also {
-                startActivity(it)
-            }
+        val steam = findViewById(R.id.steam) as ImageView
+        steam.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://steamcommunity.com/id/gabelogannewell"))
+            startActivity(i)
         }
 
         auth = FirebaseAuth.getInstance()
@@ -65,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
         val id = item.getItemId()
 
         if (id == R.id.menu_home) {
-            Intent(this@HomeActivity, HomeActivity::class.java).also {
+            Intent(this@Person3Activity, HomeActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
@@ -73,14 +59,14 @@ class HomeActivity : AppCompatActivity() {
         }
 
         if (id == R.id.menu_tentang) {
-            Intent(this@HomeActivity, AboutActivity::class.java).also {
+            Intent(this@Person3Activity, AboutActivity::class.java).also {
                 startActivity(it)
             }
             return true
         }
         if (id == R.id.menu_logout) {
             auth.signOut()
-            Intent(this@HomeActivity, LoginActivity::class.java).also {
+            Intent(this@Person3Activity, LoginActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }

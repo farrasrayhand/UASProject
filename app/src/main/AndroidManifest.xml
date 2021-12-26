@@ -13,7 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UASProject">
         <activity
-            android:name=".Home2Activity"
+            android:name=".Person3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Person2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".Person1Activity"
