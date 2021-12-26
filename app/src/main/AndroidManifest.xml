@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UASProject">
         <activity
+            android:name=".Person1Activity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity

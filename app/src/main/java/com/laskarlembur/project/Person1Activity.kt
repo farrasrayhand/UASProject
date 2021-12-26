@@ -7,19 +7,15 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.ListAdapter
-import android.widget.ListView
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 
-class HomeActivity : AppCompatActivity() {
+class Person1Activity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var logoutbutton : Button
     private lateinit var toolbar: Toolbar
@@ -27,15 +23,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
-        val person1 = findViewById(R.id.person1) as ShapeableImageView
-        person1.setOnClickListener {
-            Intent(this@HomeActivity, Person1Activity::class.java).also {
-                startActivity(it)
-            }
-        }
-
+        setContentView(R.layout.activity_person1)
 
         auth = FirebaseAuth.getInstance()
 
@@ -63,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.menu_logout ->{
                 auth.signOut()
-                Intent(this@HomeActivity, LoginActivity::class.java).also {
+                Intent(this@Person1Activity, LoginActivity::class.java).also {
                     it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(it)
                 }
