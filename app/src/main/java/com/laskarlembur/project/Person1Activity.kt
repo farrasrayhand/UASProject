@@ -1,12 +1,14 @@
 package com.laskarlembur.project
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,6 +26,12 @@ class Person1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_person1)
+
+        val twitter = findViewById(R.id.twitter) as ImageView
+        twitter.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/elonmusk"))
+            startActivity(i)
+        }
 
         auth = FirebaseAuth.getInstance()
 
