@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var logoutbutton : Button
     private lateinit var toolbar: Toolbar
     private lateinit var nav_bottom : BottomNavigationView
 

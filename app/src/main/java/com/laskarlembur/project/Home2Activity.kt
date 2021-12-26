@@ -6,24 +6,32 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Button
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 
-class Person1Activity : AppCompatActivity() {
+class Home2Activity : AppCompatActivity() {
+
     private lateinit var auth: FirebaseAuth
-    private lateinit var logoutbutton : Button
     private lateinit var toolbar: Toolbar
     private lateinit var nav_bottom : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_person1)
+        setContentView(R.layout.activity_home2)
+
+        var actionBar = getSupportActionBar()
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+        }
+
+        val person1 = findViewById(R.id.person1) as ShapeableImageView
+        person1.setOnClickListener {
+            Intent(this@Home2Activity, Person1Activity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         auth = FirebaseAuth.getInstance()
 
@@ -39,22 +47,15 @@ class Person1Activity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here.
-        val id = item.getItemId()
-
-        if (id == R.id.menu_tentang) {
-
-            return true
-        }
-        if (id == R.id.menu_logout) {
-            auth.signOut()
-            Intent(this@Person1Activity, LoginActivity::class.java).also {
-                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(it)
+        when(item.itemId){
+            R.id.menu_logout ->{
+                auth.signOut()
+                Intent(this@Home2Activity, LoginActivity::class.java).also {
+                    startActivity(it)
+                }
+                return true
             }
-            return true
+            else -> return true
         }
-
-        return super.onOptionsItemSelected(item)
     }
 }
