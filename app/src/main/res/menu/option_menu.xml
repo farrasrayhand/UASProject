@@ -6,7 +6,7 @@
         android:title="Home" />
     <item
         android:id="@+id/menu_tentang"
-        android:title="Tentang" />
+        android:title="About" />
     <item
         android:id="@+id/menu_logout"
         android:icon="@drawable/ic_logout"
